@@ -1,0 +1,30 @@
+- name: checking service status
+  hosts: database
+  tasks:
+  - name: checking service status
+    command: systemctl status  mysql
+    register: result
+    ignore_errors: yes
+  - name: showing report
+    debug:
+     var: result
+- name: checking service status
+  hosts: webservers
+  tasks:
+  - name: checking service status
+    command: systemctl status httpd
+    register: result
+    ignore_errors: yes
+  - name: showing report
+    debug:
+     var: result
+- name: checking service status
+  hosts: nginx
+  tasks:
+  - name: checking service status
+    command: systemctl status nginx
+    register: result
+    ignore_errors: yes
+  - name: showing report
+    debug:
+     var: result

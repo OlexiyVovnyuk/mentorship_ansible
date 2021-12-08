@@ -1,0 +1,6 @@
+databse-1
+nginx
+
+[webservers]
+apache-1
+apache-2
